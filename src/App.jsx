@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Component Imports
+import About from './components/About'
 import Contact from './components/Contact'
 import Education from './components/Education'
 import Footer from './components/Footer'
@@ -10,7 +11,7 @@ import Navbar from './components/Navbar'
 import ProjectDetails from './components/ProjectDetails'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import About from './components/About'
+
 
 import './App.css'
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/education" element={<Education />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer />
