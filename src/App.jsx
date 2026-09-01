@@ -1,23 +1,13 @@
-import React from 'react'
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import ProjectDetails from './components/ProjectDetails'
-import Education from './components/Education'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+// 1. Import HashRouter instead of BrowserRouter
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <BrowserRouter>
+    // 2. Wrap your application in <Router> (HashRouter)
+    <Router>
       <div className="app-container">
         <Navbar />
-        <main className="main-content">
+        <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -25,12 +15,11 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/education" element={<Education />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/project/:id" element={<ProjectDetails />} />
           </Routes>
-        </main>
+        </div>
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   )
 }
 
