@@ -12,23 +12,22 @@ import ProjectDetails from './components/ProjectDetails'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 
-
 import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="app-container">
         <Navbar />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/education" element={<Education />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer />
