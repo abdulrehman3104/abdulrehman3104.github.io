@@ -1,25 +1,30 @@
 /* Base Reset */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html, body, #root {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
-  overflow: hidden;
   font-family: Arial, sans-serif;
   background-color: #0f172a;
   color: white;
+  overflow-x: hidden; /* Prevents side-scrolling without blocking vertical scroll */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Master Viewport Container */
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* Navbar */
@@ -68,7 +73,6 @@ html, body, #root {
 .main-content {
   flex: 1;
   width: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -336,4 +340,72 @@ html, body, #root {
 .footer p {
   color: #94a3b8;
   font-size: 12px;
+}
+
+/* ==========================================
+   CORRECTED MOBILE RESPONSIVENESS (<= 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+  
+  /* Navbar Stacking */
+  .portfolio-navbar {
+    flex-direction: column;
+    padding: 16px 15px;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .portfolio-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .portfolio-links a {
+    font-size: 14px;
+  }
+
+  /* Hero Section Stacking */
+  .home {
+    flex-direction: column-reverse; /* Put image above text or text above image */
+    text-align: center;
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .home-content {
+    text-align: center;
+  }
+
+  .home h1 {
+    font-size: 28px;
+  }
+
+  .home h2 {
+    font-size: 18px;
+  }
+
+  .home-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Projects & Cards Layout */
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* Footer Adjustment */
+  .footer-links {
+    flex-direction: row;
+    gap: 16px;
+  }
 }
