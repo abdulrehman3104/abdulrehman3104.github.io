@@ -30,8 +30,8 @@ function Projects() {
             <h3>{project.title}</h3>
             <p>{project.technology}</p>
             
-            {/* Navigates to the details page */}
-            <Link to={`/project/${project.id}`} className="view-btn">
+            {/* Updated to /projects/ matching App.jsx */}
+            <Link to={`/projects/${project.id}`} className="view-btn">
               View Details
             </Link>
           </div>
